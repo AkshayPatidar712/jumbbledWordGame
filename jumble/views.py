@@ -107,10 +107,10 @@ def checkcss(request):
     user_answer = request.POST['ans']
     print(user_answer)
     if user_answer == soft:
-        msg = "Correct"
+        msg = "Correct answer"
         return redirect('cse')
     else:
-        msg = "Opps! Wrong try again"
+        msg = "Opps! Wrong answer try again"
         return render(request, 'cse.html', {'cword': cword, 'msg': msg})
 
 
