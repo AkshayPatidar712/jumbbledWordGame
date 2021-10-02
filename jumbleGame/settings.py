@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1gb1_9o#6%r0(*dam*cs8db!b#md4e#7yxncfm!xtj2z)*8cly'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-# '127.0.0.1', 'jumbbled-word-game.herokuapp.com'
+ALLOWED_HOSTS = ['127.0.0.1', 'jumbbled-word-game.herokuapp.com']
+
 
 # Application definition
 
