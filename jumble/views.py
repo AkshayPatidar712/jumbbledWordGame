@@ -68,7 +68,7 @@ def home(request):
 
 
 def sport(request):
-    global jword, word
+    global jword, msg, word
     rword()
     return render(request, 'sport.html', {'jword': jword, 'msg': msg})
 
