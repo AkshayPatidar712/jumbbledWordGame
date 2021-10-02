@@ -24,7 +24,7 @@ school = [
 movies = [
     'baby', 'holiday', 'bahubali', 'race', 'shershah', 'andaz',
     'golmaal', 'dhamaal', 'rustom', 'houseful', 'laxmi', 'andhadhun',
-    'zero', 'hero', 'sherni', 'sholey', 'krish', 'baghi', 'robot',
+    'ze ro', 'hero', 'sherni', 'sholey', 'krish', 'baghi', 'robot',
     'lagaan', 'guide', 'deewar', 'awaara', 'satya', 'anand', 'ghajini'
 ]
 
@@ -33,25 +33,31 @@ msg = ""
 
 def rword():
     global jword
-    global cword
-    global mword
-    global sword
     global word
-    global soft
-    global schl
-    global movi
     word = random.choice(sports)
     jum = random.sample(word, len(word))
     jword = "".join(jum)
 
+
+def rword2():
+    global cword
+    global soft
     soft = random.choice(cs)
     s = random.sample(soft, len(soft))
     cword = "".join(s)
 
+
+def rword3():
+    global schl
+    global sword
     schl = random.choice(school)
     sch = random.sample(schl, len(schl))
     sword = "".join(sch)
 
+
+def rword4():
+    global mword
+    global movi
     movi = random.choice(movies)
     m = random.sample(movi, len(movi))
     mword = "".join(m)
@@ -62,31 +68,30 @@ def home(request):
 
 
 def sport(request):
-    global jword, msg, word
+    global jword, word
     rword()
     return render(request, 'sport.html', {'jword': jword, 'msg': msg})
 
 
 def cse(request):
     global cword, msg, soft
-    rword()
+    rword2()
     return render(request, 'cse.html', {'cword': cword, 'msg': msg})
 
 
 def schools(request):
     global sword, msg, schl
-    rword()
+    rword3()
     return render(request, 'schools.html', {'sword': sword, 'msg': msg})
 
 
 def movie(request):
     global mword, msg, movi
-    rword()
+    rword4()
     return render(request, 'movie.html', {'mword': mword, 'msg': msg})
 
 
 def checkcr(request):
-
     global jword
     global word
     global msg
